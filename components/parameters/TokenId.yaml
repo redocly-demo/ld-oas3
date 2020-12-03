@@ -1,0 +1,6 @@
+name: tokenId
+in: path
+required: true
+description: The access token ID.
+schema:
+  type: string

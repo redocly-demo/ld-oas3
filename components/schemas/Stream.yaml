@@ -1,0 +1,12 @@
+type: object
+properties:
+  _links:
+    $ref: ./StreamUsageLinks.yaml
+  metadata:
+    type: array
+    items:
+      $ref: ./StreamUsageMetadata.yaml
+  series:
+    type: array
+    items:
+      $ref: ./StreamUsageSeries.yaml

@@ -1,0 +1,15 @@
+type: object
+properties:
+  op:
+    type: string
+    example: replace
+  path:
+    type: string
+    example: /name
+  value:
+    type: object
+    example: My resource name
+required:
+  - op
+  - path
+  - value

@@ -1,0 +1,30 @@
+post:
+  summary: Update targets included or excluded in an unbounded segment
+  operationId: updatedUnboundedSegmentTargets
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserSegmentKey.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            included:
+              $ref: ../components/schemas/UnboundedSegmentTargetChanges.yaml
+            excluded:
+              $ref: ../components/schemas/UnboundedSegmentTargetChanges.yaml
+    description: >-
+      Add or remove user targets to the included or excluded lists on an
+      unbounded segment
+    required: true
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - User segments

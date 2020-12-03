@@ -1,0 +1,15 @@
+type: object
+properties:
+  lastPing:
+    type: string
+    example: '2015-03-03T02:37:22.492Z'
+  environmentId:
+    type: string
+    example: 54ac2d97de674204ddd61096
+  ownerId:
+    $ref: ./Id.yaml
+  user:
+    $ref: ./User.yaml
+  avatar:
+    type: string
+    example: 'https://s3.amazonaws.com/uifaces/faces/twitter/shylockjoy/73.jpg'

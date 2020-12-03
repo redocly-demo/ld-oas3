@@ -1,0 +1,24 @@
+get:
+  summary: >-
+    Search users in LaunchDarkly based on their last active date, or a search
+    query. It should not be used to enumerate all users in LaunchDarkly-- use
+    the List users API resource.
+  operationId: getSearchUsers
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/Query.yaml
+    - $ref: ../components/parameters/Limit.yaml
+    - $ref: ../components/parameters/Offset.yaml
+    - $ref: ../components/parameters/After.yaml
+  responses:
+    '200':
+      description: Users response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Users.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Users

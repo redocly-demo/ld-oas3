@@ -1,0 +1,47 @@
+get:
+  summary: Get expiring user targets for user segment
+  operationId: getExpiringUserTargetsOnSegment
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserSegmentKey.yaml
+  responses:
+    '200':
+      description: User targeting expirations on user segment response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserTargetingExpirationForSegment.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - User segments
+patch:
+  summary: 'Update, add, or delete expiring user targets on user segment'
+  operationId: patchExpiringUserTargetsOnSegment
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserSegmentKey.yaml
+  requestBody:
+    $ref: >-
+      ../components/requestBodies/patchExpiringUserTargetsSemanticpatchwithcomment.yaml
+  responses:
+    '200':
+      description: User targeting expirations on user segment response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserTargetingExpirationForSegment.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - User segments

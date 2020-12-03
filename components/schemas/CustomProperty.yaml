@@ -1,0 +1,17 @@
+type: object
+description: A name and value describing a custom property.
+properties:
+  name:
+    type: string
+    description: The name of the property.
+    example: My property
+  value:
+    type: array
+    description: Values for this property.
+    items:
+      type: string
+      example:
+        - Value 1
+        - Value 2
+required:
+  - name

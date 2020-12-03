@@ -1,0 +1,23 @@
+type: object
+properties:
+  expirationDate:
+    type: integer
+    format: int64
+    description: Unix epoch time in milliseconds specifying the expiration date
+    example: 1735689600000
+  targetType:
+    type: string
+    description: >-
+      either the included or excluded variation that the user is targeted on a
+      segment
+  userKey:
+    type: string
+    description: Unique identifier for the user
+  _id:
+    type: string
+  _resourceId:
+    $ref: ./UserTargetingExpirationResourceIdForFlag.yaml
+  _links:
+    $ref: ./Links.yaml
+  _version:
+    type: integer

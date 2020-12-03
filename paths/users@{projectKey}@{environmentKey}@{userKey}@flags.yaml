@@ -1,0 +1,20 @@
+get:
+  summary: Fetch a single flag setting for a user by key.
+  operationId: getUserFlagSettings
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserKey.yaml
+  responses:
+    '200':
+      description: User flags settings response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserFlagSettings.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - User settings

@@ -1,0 +1,11 @@
+type: object
+properties:
+  parent:
+    $ref: ./Link.yaml
+  self:
+    $ref: ./Link.yaml
+  subseries:
+    type: array
+    description: Links to endpoints that are in the request path.
+    items:
+      $ref: ./Link.yaml

@@ -1,0 +1,51 @@
+get:
+  summary: Fetch a single project by key.
+  operationId: getProject
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Project2xx.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Projects
+patch:
+  summary: Modify a project by ID.
+  operationId: patchProject
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+  requestBody:
+    $ref: ../components/requestBodies/PatchOperationArray.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Project2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Projects
+delete:
+  summary: >-
+    Delete a project by key. Caution-- deleting a project will delete all
+    associated environments and feature flags. You cannot delete the last
+    project in an account.
+  operationId: deleteProject
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Projects

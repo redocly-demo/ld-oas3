@@ -1,0 +1,28 @@
+type: object
+properties:
+  key:
+    type: string
+    example: a00bea
+  secondary:
+    type: string
+  ip:
+    type: string
+  country:
+    type: string
+  email:
+    type: string
+  firstName:
+    type: string
+  lastName:
+    type: string
+  avatar:
+    type: string
+  name:
+    type: string
+    example: Bob Loblaw
+  anonymous:
+    type: boolean
+  custom:
+    type: object
+    example:
+      company: example.com

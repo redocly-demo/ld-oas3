@@ -1,0 +1,16 @@
+get:
+  summary: >-
+    Get a list of all configured audit log event integrations associated with
+    this account.
+  operationId: getIntegrations
+  responses:
+    '200':
+      description: Integrations response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Integrations.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+  tags:
+    - Integrations

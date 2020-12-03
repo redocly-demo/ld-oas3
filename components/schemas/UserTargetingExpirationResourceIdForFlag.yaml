@@ -1,0 +1,12 @@
+type: object
+properties:
+  kind:
+    type: string
+  projectKey:
+    type: string
+  environmentKey:
+    type: string
+  flagKey:
+    type: string
+  key:
+    type: string

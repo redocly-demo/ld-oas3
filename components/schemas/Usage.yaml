@@ -1,0 +1,8 @@
+type: object
+properties:
+  _links:
+    $ref: ./UsageLinks.yaml
+  series:
+    type: array
+    items:
+      $ref: ./StreamUsageSeries.yaml

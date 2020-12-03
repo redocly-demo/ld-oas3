@@ -1,0 +1,9 @@
+type: object
+properties:
+  values:
+    type: array
+    items:
+      type: string
+      example: '"1461797806427-7-115540266", "00142875-a39d-4028-a3b7-987ccd151649"'
+  variation:
+    type: integer

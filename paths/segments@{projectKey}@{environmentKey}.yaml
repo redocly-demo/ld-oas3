@@ -1,0 +1,74 @@
+get:
+  summary: Get a list of all user segments in the given project.
+  operationId: getUserSegments
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/Tag.yaml
+  responses:
+    '200':
+      description: Segments response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserSegments.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - User segments
+post:
+  summary: Creates a new user segment.
+  operationId: postUserSegment
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: A human-friendly name for the user segment.
+              example: new segment
+            key:
+              type: string
+              description: >-
+                A unique key that will be used to reference the user segment in
+                feature flags.
+              example: new-segment
+            description:
+              type: string
+              description: A description for the user segment.
+              example: Users in this segment will have access to beta features.
+            unbounded:
+              type: boolean
+              example: false
+              description: >-
+                Controls whether this segment can support unlimited numbers of
+                users. Requires the beta API and additional setup.
+                Include/exclude lists in this payload are not used in unbounded
+                segments.
+            tags:
+              type: array
+              items:
+                type: string
+                example: []
+              description: Tags for the user segment.
+          required:
+            - name
+            - key
+    description: Create a new user segment.
+    required: true
+  responses:
+    '201':
+      $ref: ../components/responses/UserSegment2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - User segments

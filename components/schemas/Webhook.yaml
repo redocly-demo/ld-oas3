@@ -1,0 +1,35 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  _id:
+    $ref: ./Id.yaml
+  url:
+    type: string
+    description: The URL of the remote webhook.
+    example: 'https://example.com/example'
+  secret:
+    type: string
+    description: >-
+      If defined, the webhooks post request will include a X-LD-Signature header
+      whose value will contain an HMAC SHA256 hex digest of the webhook payload,
+      using the secret as the key.
+    example: frobozz
+  'on':
+    type: boolean
+    description: Whether this webhook is enabled or not.
+    example: true
+  name:
+    type: string
+    description: The name of the webhook.
+    example: Example hook
+  statements:
+    type: array
+    items:
+      $ref: ./Statement.yaml
+  tags:
+    type: array
+    description: Tags assigned to this webhook.
+    items:
+      type: string
+      example: []

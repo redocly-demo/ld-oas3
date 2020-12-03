@@ -1,0 +1,5 @@
+description: The environment or flag you requested could not be found
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/EvaluationUsageError.yaml

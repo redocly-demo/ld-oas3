@@ -1,0 +1,6 @@
+name: customRoleKey
+in: path
+required: true
+description: The custom role key.
+schema:
+  type: string

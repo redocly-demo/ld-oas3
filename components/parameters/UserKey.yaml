@@ -1,0 +1,6 @@
+name: userKey
+in: path
+required: true
+description: The user's key.
+schema:
+  type: string

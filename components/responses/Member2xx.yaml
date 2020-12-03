@@ -1,0 +1,5 @@
+description: Member response.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Member.yaml

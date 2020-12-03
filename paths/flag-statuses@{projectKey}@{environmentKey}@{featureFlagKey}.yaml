@@ -1,0 +1,18 @@
+get:
+  summary: Get the status for a particular feature flag.
+  operationId: getFeatureFlagStatus
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/FeatureFlagKey.yaml
+  responses:
+    '200':
+      description: Status of the requested feature flag.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FeatureFlagStatus.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Feature flags

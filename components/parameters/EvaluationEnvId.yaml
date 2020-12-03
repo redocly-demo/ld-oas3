@@ -1,0 +1,6 @@
+name: envId
+in: path
+required: true
+description: The environment id for the flag evaluations in question.
+schema:
+  type: string

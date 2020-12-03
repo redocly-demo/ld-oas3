@@ -1,0 +1,6 @@
+name: limit
+in: query
+required: false
+description: 'The number of objects to return. Defaults to -1, which returns everything.'
+schema:
+  type: number

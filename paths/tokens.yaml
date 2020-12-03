@@ -1,0 +1,70 @@
+get:
+  summary: Returns a list of tokens in the account.
+  operationId: getTokens
+  parameters:
+    - $ref: ../components/parameters/TokenShowAllQuery.yaml
+  responses:
+    '200':
+      description: Tokens response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Tokens.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Access tokens
+post:
+  summary: Create a new token.
+  operationId: postToken
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: A human-friendly name for the access token
+              example: My access token
+            role:
+              type: string
+              description: The name of a built-in role for the token
+              example: writer
+            customRoleIds:
+              type: array
+              items:
+                type: string
+                example: []
+              description: >-
+                A list of custom role IDs to use as access limits for the access
+                token
+            inlineRole:
+              type: array
+              items:
+                $ref: ../components/schemas/Statement.yaml
+            serviceToken:
+              type: boolean
+              description: >-
+                Whether the token will be a service token
+                https://docs.launchdarkly.com/home/account-security/api-access-tokens#service-tokens
+            defaultApiVersion:
+              type: integer
+              description: The default API version for this token
+    description: Create a new access token.
+    required: true
+  responses:
+    '201':
+      description: Token response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Token.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Access tokens

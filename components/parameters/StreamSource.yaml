@@ -1,0 +1,6 @@
+name: source
+in: path
+required: true
+description: The source of where the stream comes from.
+schema:
+  type: string

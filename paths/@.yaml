@@ -1,0 +1,14 @@
+# This is the root path
+get:
+  summary: Root path
+  description: >-
+    You can issue a GET request to the root resource to find all of the resource
+    categories supported by the API.
+  operationId: getRoot
+  responses:
+    '200':
+      $ref: '../components/responses/Root200.yaml'
+    '401':
+      $ref: '../components/responses/Standard401.yaml'
+  tags:
+    - Root

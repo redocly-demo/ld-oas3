@@ -1,0 +1,48 @@
+get:
+  summary: Get a webhook by ID.
+  operationId: getWebhook
+  parameters:
+    - $ref: ../components/parameters/ResourceId.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Webhook2xx.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Webhooks
+patch:
+  summary: Modify a webhook by ID.
+  operationId: patchWebhook
+  parameters:
+    - $ref: ../components/parameters/ResourceId.yaml
+  requestBody:
+    $ref: ../components/requestBodies/PatchOperationArray.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Webhook2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Webhooks
+delete:
+  summary: Delete a webhook by ID.
+  operationId: deleteWebhook
+  parameters:
+    - $ref: ../components/parameters/ResourceId.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Webhooks

@@ -1,0 +1,6 @@
+name: limit
+in: query
+required: false
+description: Pagination limit.
+schema:
+  type: integer

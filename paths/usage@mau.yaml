@@ -1,0 +1,14 @@
+get:
+  summary: Get monthly active user data.
+  operationId: getMAU
+  responses:
+    '200':
+      description: Returns timeseries data and all sdk versions.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MAU.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+  tags:
+    - Customer Metrics

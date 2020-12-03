@@ -1,0 +1,10 @@
+name: expiry
+in: query
+required: false
+description: >-
+  The expiry parameter is deprecated for this endpoint, so the old mobile key
+  will always expire immediately. This parameter will be removed in an upcoming
+  major API client version.
+schema:
+  type: integer
+  format: int64

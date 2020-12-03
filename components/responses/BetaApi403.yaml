@@ -1,0 +1,5 @@
+description: 'This is a beta API, you must pass beta in the LD-API-Version header to use it.'
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/UsageError.yaml

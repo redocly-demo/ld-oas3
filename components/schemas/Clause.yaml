@@ -1,0 +1,17 @@
+type: object
+properties:
+  _id:
+    type: string
+  attribute:
+    type: string
+    example: groups
+  op:
+    type: string
+    example: in
+  values:
+    type: array
+    items:
+      type: object
+      example: Top Customers
+  negate:
+    type: boolean

@@ -1,0 +1,26 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  _id:
+    $ref: ./Id.yaml
+  key:
+    type: string
+    example: zentasks
+  name:
+    type: string
+    example: Zentasks
+  includeInSnippetByDefault:
+    type: boolean
+    example: true
+  environments:
+    type: array
+    items:
+      $ref: ./Environment.yaml
+  tags:
+    type: array
+    items:
+      type: string
+    description: An array of tags for this project.
+  defaultClientSideAvailability:
+    $ref: ./ClientSideAvailability.yaml

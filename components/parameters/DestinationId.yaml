@@ -1,0 +1,6 @@
+name: destinationId
+in: path
+required: true
+description: The data export destination ID.
+schema:
+  type: string

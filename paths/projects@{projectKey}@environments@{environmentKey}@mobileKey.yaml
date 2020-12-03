@@ -1,0 +1,18 @@
+post:
+  summary: >-
+    Reset an environment's mobile key. The optional expiry for the old key is
+    deprecated for this endpoint, so the old key will always expire immediately.
+  operationId: resetEnvironmentMobileKey
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/EnvironmentMobileKeyExpiry.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Environment2xx.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Environments

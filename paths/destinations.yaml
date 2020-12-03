@@ -1,0 +1,14 @@
+get:
+  summary: Returns a list of all data export destinations.
+  operationId: getDestinations
+  responses:
+    '200':
+      description: Destinations response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Destinations.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Data export destinations

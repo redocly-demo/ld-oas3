@@ -1,0 +1,48 @@
+type: object
+properties:
+  _id:
+    $ref: ./Id.yaml
+  _creator:
+    $ref: ./Member.yaml
+  name:
+    type: string
+    description: A human-friendly name for the relay proxy configuration
+    example: My relay proxy config
+  policy:
+    type: array
+    items:
+      $ref: ./Policy.yaml
+  fullKey:
+    type: string
+    example: rel-8a3a773d-b75e-48eb-a850-492cda9266eo
+    description: >-
+      Full secret key. Only included if creating or resetting the relay proxy
+      configuration
+  displayKey:
+    type: string
+    example: 66eo
+    description: >-
+      The last 4 digits of the unique secret key for this relay proxy
+      configuration
+  creationDate:
+    type: integer
+    format: int64
+    description: >-
+      A unix epoch time in milliseconds specifying the creation time of this
+      relay proxy configuration
+    example: 1443652232590
+  lastModified:
+    type: integer
+    format: int64
+    example: 1469326565348
+    description: >-
+      A unix epoch time in milliseconds specifying the last time this relay
+      proxy configuration was modified
+required:
+  - _id
+  - _creator
+  - name
+  - policy
+  - displayKey
+  - creationDate
+  - lastModified

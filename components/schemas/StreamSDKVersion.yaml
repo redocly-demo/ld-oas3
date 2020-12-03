@@ -1,0 +1,8 @@
+type: object
+properties:
+  _links:
+    $ref: ./StreamBySDKLinks.yaml
+  sdkVersions:
+    type: array
+    items:
+      $ref: ./StreamSDKVersionData.yaml

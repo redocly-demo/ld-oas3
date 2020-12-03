@@ -1,0 +1,18 @@
+get:
+  summary: Get a stream endpoint and return timeseries data.
+  operationId: getStream
+  parameters:
+    - $ref: ../components/parameters/StreamSource.yaml
+  responses:
+    '200':
+      description: Responds with time series data on stream usage.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Stream.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+    '404':
+      $ref: ../components/responses/StreamUsage404.yaml
+  tags:
+    - Customer Metrics

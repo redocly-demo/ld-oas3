@@ -1,0 +1,5 @@
+description: The stream source you requested could not be found
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/StreamUsageError.yaml

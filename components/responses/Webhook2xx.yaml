@@ -1,0 +1,5 @@
+description: Webhook response.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Webhook.yaml

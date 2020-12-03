@@ -1,0 +1,6 @@
+name: spec
+in: query
+required: false
+description: 'A resource specifier, allowing you to filter audit log listings by resource.'
+schema:
+  type: string

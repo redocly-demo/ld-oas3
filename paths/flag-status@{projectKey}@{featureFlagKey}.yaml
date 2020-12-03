@@ -1,0 +1,19 @@
+get:
+  summary: Get the status for a particular feature flag across environments
+  operationId: getFeatureFlagStatusAcrossEnvironments
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/FeatureFlagKey.yaml
+  responses:
+    '200':
+      description: Status of the requested feature flag across environments
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FeatureFlagStatusAcrossEnvironments.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+  tags:
+    - Feature flags

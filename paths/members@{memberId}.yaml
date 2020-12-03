@@ -1,0 +1,48 @@
+get:
+  summary: Get a single team member by ID.
+  operationId: getMember
+  parameters:
+    - $ref: ../components/parameters/MemberId.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Member2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Team members
+patch:
+  summary: Modify a team member by ID.
+  operationId: patchMember
+  parameters:
+    - $ref: ../components/parameters/MemberId.yaml
+  requestBody:
+    $ref: ../components/requestBodies/PatchOperationArray.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Member2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Team members
+delete:
+  summary: Delete a team member by ID.
+  operationId: deleteMember
+  parameters:
+    - $ref: ../components/parameters/MemberId.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Team members

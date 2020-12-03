@@ -1,0 +1,68 @@
+get:
+  operationId: getFeatureFlagChangeRequests
+  summary: Get all change requests for a feature flag
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/FeatureFlagKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+  responses:
+    '200':
+      description: Feature flag change requests response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FeatureFlagChangeRequests.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Feature flags
+post:
+  operationId: postFeatureFlagChangeRequest
+  summary: Create a feature flag change request
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/FeatureFlagKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            description:
+              type: string
+              description: >-
+                A name that describes the changes you would like to apply to a
+                feature flag configuration
+            instructions:
+              $ref: ../components/schemas/SemanticPatchInstruction.yaml
+            notifyMemberIds:
+              type: array
+              items:
+                type: string
+              example:
+                - memberId
+                - memberId2
+            comment:
+              type: string
+              description: comment will be included in audit log item for change.
+          required:
+            - description
+            - instructions
+            - notifyMemberIds
+    description: Create a new feature flag change request
+  responses:
+    '200':
+      description: Feature flag change request response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FeatureFlagChangeRequest.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Feature flags

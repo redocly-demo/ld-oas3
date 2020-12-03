@@ -1,0 +1,6 @@
+name: integrationKey
+in: path
+required: true
+description: The key used to specify the integration kind.
+schema:
+  type: string

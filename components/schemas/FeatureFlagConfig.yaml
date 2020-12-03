@@ -1,0 +1,45 @@
+type: object
+properties:
+  'on':
+    type: boolean
+  archived:
+    type: boolean
+  salt:
+    type: string
+    example: YWx0ZXJuYXRlLnBhZ2U=
+  sel:
+    type: string
+    example: 45501b9314dc4641841af774cb038b96
+  lastModified:
+    type: integer
+    format: int64
+    example: 1469326565348
+  version:
+    type: integer
+    example: 65
+  targets:
+    type: array
+    items:
+      $ref: ./Target.yaml
+  rules:
+    type: array
+    items:
+      $ref: ./Rule.yaml
+  fallthrough:
+    $ref: ./Fallthrough.yaml
+  offVariation:
+    type: integer
+  prerequisites:
+    type: array
+    items:
+      $ref: ./Prerequisite.yaml
+  trackEvents:
+    type: boolean
+    example: false
+    description: Set to true to send detailed event information for this flag.
+  trackEventsFallthrough:
+    type: boolean
+    example: true
+    description: >-
+      Set to true to send detailed event information when targeting is enabled
+      but no individual targeting rule is matched.

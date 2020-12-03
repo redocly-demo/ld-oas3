@@ -1,0 +1,34 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  _id:
+    type: string
+    example: 37ed9aad-de0a-4665-932e-41c35587aeea
+    description: Unique destination ID.
+  name:
+    type: string
+    example: Example Google Pub/Sub Destination
+    description: The destination name
+  kind:
+    type: string
+    example: google-pubsub
+    description: 'Destination type ("google-pubsub", "kinesis", "mparticle", or "segment")'
+    enum:
+      - google-pubsub
+      - kinesis
+      - mparticle
+      - segment
+  config:
+    type: object
+    description: destination-specific configuration.
+    example:
+      project: cool-project
+      topic: test
+  'on':
+    type: boolean
+    example: true
+    description: Whether the data export destination is on or not.
+  version:
+    type: integer
+    example: 2

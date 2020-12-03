@@ -1,0 +1,6 @@
+name: memberId
+in: path
+required: true
+description: The member ID.
+schema:
+  type: string

@@ -1,0 +1,10 @@
+type: object
+properties:
+  usingEnvironmentId:
+    type: boolean
+    description: >-
+      When set to true, this flag will be available to SDKs using the
+      client-side id.
+  usingMobileKey:
+    type: boolean
+    description: 'When set to true, this flag will be available to SDKS using a mobile key.'

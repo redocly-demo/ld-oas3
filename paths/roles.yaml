@@ -1,0 +1,56 @@
+get:
+  summary: Return a complete list of custom roles.
+  operationId: getCustomRoles
+  responses:
+    '200':
+      description: Custom roles response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CustomRoles.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Custom roles
+post:
+  summary: Create a new custom role.
+  operationId: postCustomRole
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: Name of the custom role.
+              example: revenue team
+            description:
+              type: string
+              description: Description of the custom role.
+              example: Description of revenue team role here
+            key:
+              type: string
+              description: The 20-hexdigit id or the key for a custom role.
+              example: revenue-team
+            policy:
+              type: array
+              items:
+                $ref: ../components/schemas/Policy.yaml
+          required:
+            - name
+            - key
+            - policy
+    description: New role or roles to create.
+    required: true
+  responses:
+    '201':
+      $ref: ../components/responses/CustomRole2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Custom roles

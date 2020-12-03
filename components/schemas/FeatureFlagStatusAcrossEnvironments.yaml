@@ -1,0 +1,10 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  key:
+    type: string
+  environments:
+    type: object
+    additionalProperties:
+      $ref: ./FeatureFlagStatusForQueriedEnvironment.yaml

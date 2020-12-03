@@ -1,0 +1,57 @@
+get:
+  summary: Get a single integration subscription by ID.
+  operationId: getIntegrationSubscription
+  parameters:
+    - $ref: ../components/parameters/IntegrationKey.yaml
+    - $ref: ../components/parameters/IntegrationId.yaml
+  responses:
+    '200':
+      description: Integrations response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IntegrationSubscription.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Integrations
+patch:
+  summary: Modify an integration subscription by ID.
+  operationId: patchIntegrationSubscription
+  parameters:
+    - $ref: ../components/parameters/IntegrationKey.yaml
+    - $ref: ../components/parameters/IntegrationId.yaml
+  requestBody:
+    $ref: ../components/requestBodies/PatchOperationArray.yaml
+  responses:
+    '200':
+      description: Integrations response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IntegrationSubscription.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Integrations
+delete:
+  summary: Delete an integration subscription by ID.
+  operationId: deleteIntegrationSubscription
+  parameters:
+    - $ref: ../components/parameters/IntegrationKey.yaml
+    - $ref: ../components/parameters/IntegrationId.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Integrations

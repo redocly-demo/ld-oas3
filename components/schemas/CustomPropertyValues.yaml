@@ -1,0 +1,7 @@
+type: array
+description: Values for this property.
+items:
+  type: string
+example:
+  - Value 1
+  - Value 2

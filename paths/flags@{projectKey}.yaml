@@ -1,0 +1,96 @@
+get:
+  summary: Get a list of all features in the given project.
+  operationId: getFeatureFlags
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKeyQuery.yaml
+    - $ref: ../components/parameters/SummaryQuery.yaml
+    - $ref: ../components/parameters/ArchivedQuery.yaml
+    - $ref: ../components/parameters/LimitQuery.yaml
+    - $ref: ../components/parameters/OffsetQuery.yaml
+    - $ref: ../components/parameters/FilterQuery.yaml
+    - $ref: ../components/parameters/SortQuery.yaml
+    - $ref: ../components/parameters/Tag.yaml
+  responses:
+    '200':
+      description: Flags response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FeatureFlags.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Feature flags
+post:
+  summary: Creates a new feature flag.
+  operationId: postFeatureFlag
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/CloneFlagKeyQuery.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: >-
+                A human-friendly name for the feature flag. Remember to note if
+                this flag is intended to be temporary or permanent.
+              example: new test flag
+            key:
+              type: string
+              description: >-
+                A unique key that will be used to reference the flag in your
+                code.
+              example: new-test-flag
+            description:
+              type: string
+              description: A description of the feature flag.
+              example: This flag controls whether test feature is turned on or not.
+            variations:
+              type: array
+              items:
+                $ref: ../components/schemas/Variation.yaml
+              description: An array of possible variations for the flag.
+            temporary:
+              type: boolean
+              description: Whether or not the flag is a temporary flag.
+            tags:
+              type: array
+              items:
+                type: string
+                example: []
+              description: Tags for the feature flag.
+            includeInSnippet:
+              type: boolean
+              description: >-
+                Whether or not this flag should be made available to the
+                client-side JavaScript SDK.
+            clientSideAvailability:
+              $ref: ../components/schemas/ClientSideAvailability.yaml
+            defaults:
+              $ref: ../components/schemas/Defaults.yaml
+          required:
+            - name
+            - key
+            - variations
+    description: Create a new feature flag.
+    required: true
+  responses:
+    '201':
+      description: Flag response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FeatureFlag.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Feature flags

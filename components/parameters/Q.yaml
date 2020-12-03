@@ -1,0 +1,9 @@
+name: q
+in: query
+required: false
+description: >-
+  Text to search for. You can search for the full or partial name of the
+  resource involved or full or partial email address of the member who made the
+  change.
+schema:
+  type: string

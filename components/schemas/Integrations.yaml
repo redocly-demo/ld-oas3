@@ -1,0 +1,16 @@
+type: object
+properties:
+  _links:
+    type: object
+    description: A mapping of integration types to their respective API endpoints.
+    example:
+      appdynamics:
+        href: /api/v2/integrations/appdynamics
+        type: application/json
+      splunk:
+        href: /api/v2/integrations/splunk
+        type: application/json
+  items:
+    type: array
+    items:
+      $ref: ./IntegrationSubscription.yaml

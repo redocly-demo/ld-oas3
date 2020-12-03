@@ -1,0 +1,66 @@
+type: object
+required:
+  - key
+  - name
+  - creationDate
+properties:
+  key:
+    type: string
+    description: Unique identifier for the user segment.
+    example: beta-testers
+  name:
+    type: string
+    description: Name of the user segment.
+    example: Beta Testers
+  description:
+    type: string
+    description: Description of the user segment.
+    example: Users in this segment can access beta features.
+  tags:
+    type: array
+    items:
+      type: string
+    example:
+      - dev
+      - ops
+    description: An array of tags for this user segment.
+  creationDate:
+    type: integer
+    format: int64
+    description: >-
+      A unix epoch time in milliseconds specifying the creation time of this
+      flag.
+    example: 1443652232590
+  included:
+    type: array
+    items:
+      type: string
+    description: An array of user keys that are included in this segment.
+  excluded:
+    type: array
+    items:
+      type: string
+    description: >-
+      An array of user keys that should not be included in this segment, unless
+      they are also listed in "included".
+  rules:
+    type: array
+    items:
+      $ref: ./UserSegmentRule.yaml
+    description: An array of rules that can cause a user to be included in this segment.
+  unbounded:
+    type: boolean
+    example: false
+    description: >-
+      Controls whether this segment can support unlimited numbers of users.
+      Requires the beta API and additional setup. Include/exclude lists in this
+      payload are not used in unbounded segments.
+  version:
+    type: integer
+  _links:
+    $ref: ./Links.yaml
+  _flags:
+    type: array
+    readOnly: true
+    items:
+      $ref: ./FlagListItem.yaml

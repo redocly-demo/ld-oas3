@@ -1,0 +1,10 @@
+name: expiry
+in: query
+required: false
+description: >-
+  An expiration time for the old relay proxy configuration key, expressed as a
+  Unix epoch time in milliseconds. By default, the relay proxy configuration
+  will expire immediately
+schema:
+  type: integer
+  format: int64

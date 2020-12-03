@@ -1,0 +1,10 @@
+name: clone
+in: query
+required: false
+description: >-
+  The key of the feature flag to be cloned. The key identifies the flag in your
+  code.  For example, setting clone=flagKey will copy the full targeting
+  configuration for all environments (including on/off state) from the original
+  flag to the new flag.
+schema:
+  type: string

@@ -1,0 +1,13 @@
+type: object
+properties:
+  creationDate:
+    type: integer
+    description: >-
+      A unix epoch time in milliseconds specifying the date the change request
+      was reviewed
+  kind:
+    $ref: ./FeatureFlagChangeRequestReviewStatus.yaml
+  memberId:
+    $ref: ./Id.yaml
+  _id:
+    $ref: ./Id.yaml

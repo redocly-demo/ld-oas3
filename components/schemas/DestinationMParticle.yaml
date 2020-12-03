@@ -1,0 +1,14 @@
+type: object
+properties:
+  apiKey:
+    type: string
+    example: apiKeyfromMParticle
+  secret:
+    type: string
+    example: mParticleSecret
+  userIdentity:
+    type: string
+    example: customer_id
+  environment:
+    type: string
+    example: production

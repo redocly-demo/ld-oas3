@@ -1,0 +1,48 @@
+get:
+  summary: Get one custom role by key.
+  operationId: getCustomRole
+  parameters:
+    - $ref: ../components/parameters/CustomRoleKey.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/CustomRole2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Custom roles
+patch:
+  summary: Modify a custom role by key.
+  operationId: patchCustomRole
+  parameters:
+    - $ref: ../components/parameters/CustomRoleKey.yaml
+  requestBody:
+    $ref: ../components/requestBodies/PatchOperationArray.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/CustomRole2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Custom roles
+delete:
+  summary: Delete a custom role by key.
+  operationId: deleteCustomRole
+  parameters:
+    - $ref: ../components/parameters/CustomRoleKey.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Custom roles

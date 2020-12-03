@@ -1,0 +1,5 @@
+description: A list of links to available resources in the API.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Links.yaml

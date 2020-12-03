@@ -1,0 +1,10 @@
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        $ref: ../schemas/PatchOperation.yaml
+description: >-
+  Requires a JSON Patch representation of the desired changes to the project.
+  'http://jsonpatch.com/'
+required: true

@@ -1,0 +1,3 @@
+type: string
+description: The unique resource id.
+example: 5a580a01b4ff89217bdf9dc1

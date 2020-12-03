@@ -1,0 +1,5 @@
+description: Custom role response.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/CustomRole.yaml

@@ -1,0 +1,97 @@
+type: object
+properties:
+  key:
+    type: string
+    example: test-feature
+  name:
+    type: string
+    description: Name of the feature flag.
+    example: Test Feature
+  description:
+    type: string
+    description: Description of the feature flag.
+    example: This flag controls whether test feature is turned on or not.
+  kind:
+    type: string
+    description: Whether the feature flag is a boolean flag or multivariate.
+    example: boolean
+  creationDate:
+    type: integer
+    format: int64
+    description: >-
+      A unix epoch time in milliseconds specifying the creation time of this
+      flag.
+    example: 1443652232590
+  includeInSnippet:
+    type: boolean
+    example: false
+  temporary:
+    type: boolean
+    description: Whether or not this flag is temporary.
+    example: false
+  maintainerId:
+    type: string
+    description: The ID of the member that should maintain this flag.
+    example: 561c579cd8fd5c2704000001
+  tags:
+    type: array
+    description: An array of tags for this feature flag.
+    items:
+      type: string
+    example: []
+  variations:
+    type: array
+    description: The variations for this feature flag.
+    items:
+      $ref: ./Variation.yaml
+    example:
+      - value: a
+      - value: b
+  goalIds:
+    type: array
+    description: An array goals from all environments associated with this feature flag
+    items:
+      type: string
+    example:
+      - d7239405bd89c930e885aa76
+      - 405bc930e88d7239d895aa76
+  _version:
+    type: integer
+    example: 23
+  customProperties:
+    type: object
+    description: A mapping of keys to CustomProperty entries.
+    additionalProperties:
+      $ref: ./CustomProperty.yaml
+    example:
+      bugs:
+        name: Issue tracker ids
+        value:
+          - '123'
+          - '456'
+      deprecated:
+        name: Deprecated Date
+        value: []
+  _links:
+    $ref: ./Links.yaml
+  _maintainer:
+    $ref: ./Member.yaml
+  environments:
+    type: object
+    additionalProperties:
+      $ref: ./FeatureFlagConfig.yaml
+  archivedDate:
+    type: integer
+    format: int64
+    description: >-
+      A unix epoch time in milliseconds specifying the archived time of this
+      flag.
+    example: 1443652232590
+  archived:
+    type: boolean
+    description: Whether or not this flag is archived.
+    example: false
+  clientSideAvailability:
+    $ref: ./ClientSideAvailability.yaml
+  defaults:
+    $ref: ./Defaults.yaml

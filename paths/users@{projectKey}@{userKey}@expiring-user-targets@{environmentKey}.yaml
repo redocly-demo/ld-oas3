@@ -1,0 +1,45 @@
+get:
+  summary: Get expiring dates on flags for user
+  operationId: getExpiringUserTargetsForUser
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserKey.yaml
+  responses:
+    '200':
+      description: User targets of the requested feature flag.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserTargetingExpirationOnFlagsForUser.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - User settings
+patch:
+  summary: 'Update, add, or delete expiring user targets for a single user on all flags'
+  operationId: patchExpiringUserTargetsForFlags
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserKey.yaml
+  requestBody:
+    $ref: >-
+      ../components/requestBodies/patchExpiringUserTargetsSemanticpatchwithcomment.yaml
+  responses:
+    '200':
+      description: User Targeting expiration for single user on all flags response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserTargetingExpirationOnFlagsForUser.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - User settings

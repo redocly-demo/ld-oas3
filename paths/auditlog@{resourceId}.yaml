@@ -1,0 +1,18 @@
+get:
+  summary: Use this endpoint to fetch a single audit log entry by its resouce ID.
+  operationId: getAuditLogEntry
+  parameters:
+    - $ref: ../components/parameters/ResourceId.yaml
+  responses:
+    '200':
+      description: Audit log entry response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AuditLogEntry.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Audit log

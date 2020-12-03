@@ -1,0 +1,17 @@
+post:
+  summary: >-
+    Reset a relay proxy configuration's secret key with an optional expiry time
+    for the old key.
+  operationId: resetRelayProxyConfig
+  parameters:
+    - $ref: ../components/parameters/RelayProxyConfigId.yaml
+    - $ref: ../components/parameters/RelayProxyConfigsExpiry.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/RelayProxyConfig2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Relay proxy configurations

@@ -1,0 +1,11 @@
+type: object
+properties:
+  region:
+    type: string
+    example: us-east-1
+  roleArn:
+    type: string
+    example: 'arn:aws:iam::123456789012:role/marketingadmin'
+  streamName:
+    type: string
+    example: cat-stream

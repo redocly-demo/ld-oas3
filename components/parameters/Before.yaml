@@ -1,0 +1,9 @@
+name: before
+in: query
+required: false
+description: >-
+  A timestamp filter, expressed as a Unix epoch time in milliseconds. All
+  entries returned will have before this timestamp.
+schema:
+  type: integer
+  format: int64

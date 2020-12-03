@@ -1,0 +1,57 @@
+type: object
+properties:
+  _id:
+    $ref: ./Id.yaml
+  _version:
+    type: integer
+  creationDate:
+    type: integer
+    description: >-
+      A unix epoch time in milliseconds specifying the date the change request
+      was requested
+  requestorId:
+    type: string
+    description: The id of the member that requested the change
+  reviewStatus:
+    $ref: ./FeatureFlagChangeRequestReviewStatus.yaml
+  status:
+    type: string
+    description: >
+      | Name     | Description |
+
+      | --------:| ----------- |
+
+      | pending  | the feature flag change request has not been applied yet |
+
+      | completed| the feature flag change request has been applied successfully
+      |
+
+      | failed   | the feature flag change request has been applied but the
+      changes were not applied successfully |
+    enum:
+      - pending
+      - completed
+      - failed
+  appliedByMemberID:
+    type: string
+    description: The id of the member that applied the change request
+  appliedDate:
+    type: integer
+    description: >-
+      A unix epoch time in milliseconds specifying the date the change request
+      was applied
+  currentReviewsByMemberId:
+    $ref: ./FeatureFlagChangeRequestReview.yaml
+  allReviews:
+    type: array
+    items:
+      $ref: ./FeatureFlagChangeRequestReview.yaml
+  notifyMemberIds:
+    type: array
+    items:
+      type: string
+    example:
+      - memberId
+      - memberId2
+  instructions:
+    $ref: ./SemanticPatchInstruction.yaml

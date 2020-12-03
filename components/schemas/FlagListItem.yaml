@@ -1,0 +1,10 @@
+type: object
+properties:
+  name:
+    type: string
+  key:
+    type: string
+  _links:
+    $ref: ./Links.yaml
+  _site:
+    $ref: ./Site.yaml

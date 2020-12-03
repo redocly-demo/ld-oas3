@@ -1,0 +1,4 @@
+type: object
+properties:
+  links:
+    $ref: ./UsageLinks.yaml

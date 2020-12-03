@@ -1,0 +1,9 @@
+type: object
+properties:
+  comment:
+    type: string
+    example: This is a comment string
+  instructions:
+    $ref: ./SemanticPatchInstruction.yaml
+required:
+  - instructions

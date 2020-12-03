@@ -1,0 +1,6 @@
+name: q
+in: query
+required: false
+description: Search query.
+schema:
+  type: string

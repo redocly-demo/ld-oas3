@@ -1,0 +1,11 @@
+type: object
+properties:
+  _links:
+    type: object
+    properties:
+      self:
+        $ref: ./Link.yaml
+  items:
+    type: array
+    items:
+      $ref: ./IntegrationSubscription.yaml

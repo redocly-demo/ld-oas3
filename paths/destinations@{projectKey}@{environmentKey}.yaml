@@ -1,0 +1,54 @@
+post:
+  summary: Create a new data export destination
+  operationId: postDestination
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: A human-readable name for your data export destination.
+              example: Example Google Pub/Sub Destination
+            kind:
+              type: string
+              description: >-
+                The data export destination type. Available choices are kinesis,
+                google-pubsub, mparticle, or segment.
+              example: google-pubsub
+              enum:
+                - google-pubsub
+                - kinesis
+                - mparticle
+                - segment
+            config:
+              type: object
+              description: destination-specific configuration.
+              example:
+                project: cool-project
+                topic: test
+            'on':
+              type: boolean
+              example: true
+              description: Whether the data export destination is on or not.
+          required:
+            - name
+            - kind
+            - config
+    description: Create a new data export destination.
+    required: true
+  responses:
+    '201':
+      $ref: ../components/responses/Destination2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Data export destinations

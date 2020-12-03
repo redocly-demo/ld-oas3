@@ -1,0 +1,9 @@
+type: string
+example: []
+enum:
+  - updateOn
+  - updatePrerequisites
+  - updateTargets
+  - updateRules
+  - updateFallthrough
+  - updateOffVariation

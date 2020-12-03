@@ -1,0 +1,55 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  _id:
+    $ref: ./Id.yaml
+  key:
+    type: string
+    example: production
+    description: The key for the environment.
+  name:
+    type: string
+    example: Production
+    description: The name of the environment.
+  apiKey:
+    type: string
+    example: XXX
+    description: The SDK key for backend LaunchDarkly SDKs.
+  mobileKey:
+    type: string
+    example: XXX
+    description: The SDK key for mobile LaunchDarkly SDKs.
+  color:
+    type: string
+    example: '417505'
+    description: The swatch color for the environment.
+  defaultTtl:
+    type: number
+    example: 0
+    description: The default TTL.
+  secureMode:
+    type: boolean
+    example: false
+    description: Determines if this environment is in safe mode.
+  defaultTrackEvents:
+    type: boolean
+    example: false
+    description: Set to true to send detailed event information for new flags.
+  tags:
+    type: array
+    items:
+      type: string
+    description: An array of tags for this environment.
+  requireComments:
+    type: boolean
+    example: false
+    description: >-
+      Determines if this environment requires comments for flag and segment
+      changes.
+  confirmChanges:
+    type: boolean
+    example: false
+    description: >-
+      Determines if this environment requires confirmation for flag and segment
+      changes.

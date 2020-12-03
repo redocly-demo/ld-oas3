@@ -1,0 +1,48 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  _id:
+    $ref: ./Id.yaml
+  date:
+    type: integer
+    format: int64
+    example: 1472243938774
+  kind:
+    type: string
+    example: environment
+  name:
+    type: string
+    example: Testing
+  description:
+    type: string
+    example: Changed the name from Test to Testing
+  shortDescription:
+    type: string
+    example: '""'
+  comment:
+    type: string
+    example: This is a comment string
+  member:
+    $ref: ./Member.yaml
+  titleVerb:
+    type: string
+    example: changed the name of
+  title:
+    type: string
+    example: >-
+      [Reese Applebaum](mailto:refapp@launchdarkly.com) changed the name of
+      [Testing](https://app.launchdarkly.com/settings#/projects)
+  target:
+    type: object
+    properties:
+      _links:
+        $ref: ./Links.yaml
+      name:
+        type: string
+        example: Testing
+      resources:
+        type: array
+        items:
+          type: string
+          example: 'proj/alexis:env/test'

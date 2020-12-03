@@ -1,0 +1,36 @@
+get:
+  summary: Get a user by key.
+  operationId: getUser
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserKey.yaml
+  responses:
+    '200':
+      description: User response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/User.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Users
+delete:
+  summary: Delete a user by ID.
+  operationId: deleteUser
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserKey.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Users

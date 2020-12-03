@@ -1,0 +1,6 @@
+name: integrationId
+in: path
+required: true
+description: The integration ID.
+schema:
+  type: string

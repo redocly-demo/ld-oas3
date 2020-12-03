@@ -1,0 +1,6 @@
+name: type
+in: path
+required: true
+description: The type of event we would like to track.
+schema:
+  type: string

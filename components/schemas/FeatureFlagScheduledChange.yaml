@@ -1,0 +1,13 @@
+type: object
+properties:
+  executionDate:
+    type: integer
+    description: >-
+      A unix epoch time in milliseconds specifying the date the scheduled
+      changes will be applied
+  _version:
+    type: integer
+  _id:
+    type: string
+  instructions:
+    $ref: ./SemanticPatchInstruction.yaml

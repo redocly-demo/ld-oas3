@@ -1,0 +1,6 @@
+type: object
+properties:
+  self:
+    $ref: ./Link.yaml
+  next:
+    $ref: ./Link.yaml

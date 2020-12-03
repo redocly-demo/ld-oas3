@@ -1,0 +1,37 @@
+type: object
+properties:
+  resources:
+    type: array
+    items:
+      type: string
+      description: A resource specifier string
+      example: 'proj/*:env/*:flag/my-flag'
+  notResources:
+    type: array
+    items:
+      type: string
+      description: A resource specifier string
+      example: 'proj/*:env/*:flag/my-flag'
+    description: >-
+      Targeted resource will be those resources NOT in this list. The
+      "resources`" field must be empty to use this field.
+  actions:
+    type: array
+    items:
+      type: string
+      description: An action to perform on a resource.
+      example: updateOn
+  notActions:
+    type: array
+    items:
+      type: string
+      description: An action to perform on a resource.
+      example: updateOn
+    description: >-
+      Targeted actions will be those actions NOT in this list. The "actions"
+      field must be empty to use this field.
+  effect:
+    type: string
+    enum:
+      - allow
+      - deny

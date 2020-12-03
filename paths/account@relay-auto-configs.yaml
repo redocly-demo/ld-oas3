@@ -1,0 +1,44 @@
+get:
+  summary: Returns a list of relay proxy configurations in the account.
+  operationId: getRelayProxyConfigs
+  responses:
+    '200':
+      description: Relay proxy configs response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RelayProxyConfigs.yaml
+  tags:
+    - Relay proxy configurations
+post:
+  summary: Create a new relay proxy config.
+  operationId: postRelayAutoConfig
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: A human-friendly name for the relay proxy configuration
+              example: My relay proxy config
+            policy:
+              type: array
+              items:
+                $ref: ../components/schemas/Policy.yaml
+    description: Create a new relay proxy configuration
+    required: true
+  responses:
+    '201':
+      description: Relay proxy config response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RelayProxyConfig.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '403':
+      $ref: ../components/responses/Standard403.yaml
+  tags:
+    - Relay proxy configurations

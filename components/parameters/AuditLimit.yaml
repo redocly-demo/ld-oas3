@@ -1,0 +1,6 @@
+name: limit
+in: query
+required: false
+description: 'A limit on the number of audit log entries to be returned, between 1 and 20.'
+schema:
+  type: number

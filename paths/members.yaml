@@ -1,0 +1,70 @@
+get:
+  summary: Returns a list of all members in the account.
+  operationId: getMembers
+  parameters:
+    - $ref: ../components/parameters/LimitQuery.yaml
+    - $ref: ../components/parameters/OffsetQuery.yaml
+    - $ref: ../components/parameters/FilterQuery.yaml
+    - $ref: ../components/parameters/SortQuery.yaml
+  responses:
+    '200':
+      description: Members response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Members.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Team members
+post:
+  summary: Invite new members.
+  operationId: postMembers
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                example: exampleuser@email.com
+              firstName:
+                type: string
+                example: Bob
+              lastName:
+                type: string
+                example: Loblaw
+              role:
+                $ref: ../components/schemas/Role.yaml
+              customRoles:
+                type: array
+                items:
+                  type: string
+                  description: The 20-hexdigit id or the key for a custom role.
+                  example: revenue-team
+              inlineRole:
+                type: array
+                items:
+                  $ref: ../components/schemas/Statement.yaml
+            required:
+              - email
+    description: New members to invite.
+    required: true
+  responses:
+    '201':
+      description: Members response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Members.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Team members

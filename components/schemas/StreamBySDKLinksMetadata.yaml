@@ -1,0 +1,11 @@
+type: object
+properties:
+  sdk:
+    type: string
+    example: ruby
+  version:
+    type: string
+    example: 5.4.3
+  source:
+    type: string
+    example: server

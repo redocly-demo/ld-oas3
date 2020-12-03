@@ -1,0 +1,6 @@
+name: scrollId
+in: query
+required: false
+description: This parameter is required when following "next" links.
+schema:
+  type: string

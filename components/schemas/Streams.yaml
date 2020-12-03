@@ -1,0 +1,4 @@
+type: object
+properties:
+  _links:
+    $ref: ./StreamUsageLinks.yaml

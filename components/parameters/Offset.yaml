@@ -1,0 +1,6 @@
+name: offset
+in: query
+required: false
+description: Specifies the first item to return in the collection.
+schema:
+  type: integer

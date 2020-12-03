@@ -1,0 +1,25 @@
+post:
+  summary: >-
+    Create a new environment in a specified project with a given name, key, and
+    swatch color.
+  operationId: postEnvironment
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/EnvironmentPost.yaml
+    description: New environment.
+    required: true
+  responses:
+    '201':
+      $ref: ../components/responses/Environment2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Environments

@@ -1,0 +1,10 @@
+type: object
+properties:
+  clauses:
+    type: array
+    items:
+      $ref: ./Clause.yaml
+  weight:
+    type: integer
+  bucketBy:
+    type: string

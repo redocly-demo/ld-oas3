@@ -1,0 +1,8 @@
+name: archived
+in: query
+required: false
+description: >-
+  When set to 1, only archived flags will be included in the list of flags
+  returned.  By default, archived flags are not included in the list of flags.
+schema:
+  type: boolean

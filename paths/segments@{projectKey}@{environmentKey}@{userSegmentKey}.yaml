@@ -1,0 +1,54 @@
+get:
+  summary: Get a single user segment by key.
+  operationId: getUserSegment
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserSegmentKey.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/UserSegment2xx.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - User segments
+patch:
+  summary: Perform a partial update to a user segment.
+  operationId: patchUserSegment
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserSegmentKey.yaml
+  requestBody:
+    $ref: ../components/requestBodies/PatchOperationArray2.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/UserSegment2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - User segments
+delete:
+  summary: Delete a user segment.
+  operationId: deleteUserSegment
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserSegmentKey.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - User segments

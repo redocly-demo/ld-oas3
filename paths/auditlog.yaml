@@ -1,0 +1,25 @@
+get:
+  summary: >-
+    Get a list of all audit log entries. The query parameters allow you to
+    restrict the returned results by date ranges, resource specifiers, or a
+    full-text search query.
+  operationId: getAuditLogEntries
+  parameters:
+    - $ref: ../components/parameters/Before.yaml
+    - $ref: ../components/parameters/After.yaml
+    - $ref: ../components/parameters/Q.yaml
+    - $ref: ../components/parameters/AuditLimit.yaml
+    - $ref: ../components/parameters/Spec.yaml
+  responses:
+    '200':
+      description: Audit log entries response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AuditLogEntries.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Audit log

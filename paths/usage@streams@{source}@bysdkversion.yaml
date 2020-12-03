@@ -1,0 +1,18 @@
+get:
+  summary: Get a stream timeseries data by source show sdk version metadata.
+  operationId: getStreamBySDK
+  parameters:
+    - $ref: ../components/parameters/StreamSource.yaml
+  responses:
+    '200':
+      description: Returns timeseries data and metadata on sdk version.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/StreamBySDK.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+    '404':
+      $ref: ../components/responses/StreamUsage404.yaml
+  tags:
+    - Customer Metrics

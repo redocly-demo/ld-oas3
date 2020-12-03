@@ -1,0 +1,52 @@
+get:
+  summary: Fetch a single flag setting for a user by key.
+  operationId: getUserFlagSetting
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserKey.yaml
+    - $ref: ../components/parameters/FeatureFlagKey.yaml
+  responses:
+    '200':
+      description: User flag setting response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserFlagSetting.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - User settings
+put:
+  summary: Specifically enable or disable a feature flag for a user based on their key.
+  operationId: putFlagSetting
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/UserKey.yaml
+    - $ref: ../components/parameters/FeatureFlagKey.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            setting:
+              type: boolean
+              description: >
+                The variation value to set for the user. Must match the
+                variation type of the flag.
+    required: true
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - User settings

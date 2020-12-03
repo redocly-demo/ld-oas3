@@ -1,0 +1,23 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  items:
+    type: object
+    additionalProperties:
+      $ref: ./UserFlagSetting.yaml
+    example:
+      sort.order:
+        _links:
+          self:
+            href: /api/v2/users/lacuna/production/Abbie_Braun/flags/sort.order
+            type: application/json
+          _value: true
+          setting: null
+      alternate.page:
+        _links:
+          self:
+            href: /api/v2/users/lacuna/production/Abbie_Braun/flags/alternate.page
+            type: application/json
+        _value: 'false,'
+        setting: null

@@ -1,0 +1,44 @@
+get:
+  summary: Get a single relay proxy configuration by ID.
+  operationId: getRelayProxyConfig
+  parameters:
+    - $ref: ../components/parameters/RelayProxyConfigId.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/RelayProxyConfig2xx.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Relay proxy configurations
+patch:
+  summary: Modify a relay proxy configuration by ID.
+  operationId: patchRelayProxyConfig
+  parameters:
+    - $ref: ../components/parameters/RelayProxyConfigId.yaml
+  requestBody:
+    $ref: ../components/requestBodies/PatchOperationArray.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/RelayProxyConfig2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Relay proxy configurations
+delete:
+  summary: Delete a relay proxy configuration by ID.
+  operationId: deleteRelayProxyConfig
+  parameters:
+    - $ref: ../components/parameters/RelayProxyConfigId.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Relay proxy configurations

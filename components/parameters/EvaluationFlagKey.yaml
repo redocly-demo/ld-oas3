@@ -1,0 +1,6 @@
+name: flagKey
+in: path
+required: true
+description: The key of the flag we want metrics for.
+schema:
+  type: string

@@ -1,0 +1,14 @@
+type: object
+description: Default values to be used when a new environment is created.
+required:
+  - onVariation
+  - offVariation
+properties:
+  onVariation:
+    type: integer
+    description: >-
+      The index of the variation to be served when a flag's targeting is on
+      (default variation).
+  offVariation:
+    type: integer
+    description: The index of the variation to be served when a flag is off.

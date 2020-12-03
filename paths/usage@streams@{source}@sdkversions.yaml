@@ -1,0 +1,18 @@
+get:
+  summary: Get a stream timeseries data by source and show all sdk version associated.
+  operationId: getStreamSDKVersion
+  parameters:
+    - $ref: ../components/parameters/StreamSource.yaml
+  responses:
+    '200':
+      description: Returns timeseries data and all sdk versions.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/StreamSDKVersion.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+    '404':
+      $ref: ../components/responses/StreamUsage404.yaml
+  tags:
+    - Customer Metrics

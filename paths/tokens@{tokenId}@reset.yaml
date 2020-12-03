@@ -1,0 +1,17 @@
+post:
+  summary: >-
+    Reset an access token's secret key with an optional expiry time for the old
+    key.
+  operationId: resetToken
+  parameters:
+    - $ref: ../components/parameters/TokenId.yaml
+    - $ref: ../components/parameters/TokenExpiry.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Token2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Access tokens

@@ -1,0 +1,19 @@
+get:
+  summary: >-
+    Get a list of statuses for all feature flags. The status includes the last
+    time the feature flag was requested, as well as the state of the flag.
+  operationId: getFeatureFlagStatuses
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+  responses:
+    '200':
+      description: List of feature flag statuses.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FeatureFlagStatuses.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Feature flags

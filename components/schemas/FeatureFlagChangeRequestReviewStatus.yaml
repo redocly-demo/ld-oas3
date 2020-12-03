@@ -1,0 +1,17 @@
+type: string
+description: >
+  | Name     | Description |
+
+  | --------:| ----------- |
+
+  | pending  | the feature flag change request has not been reviewed yet |
+
+  | approved | the feature flag change request has been approved and can now be
+  applied |
+
+  | declined | the feature flag change request has been declined and cannot be
+  applied |
+enum:
+  - pending
+  - approved
+  - declined

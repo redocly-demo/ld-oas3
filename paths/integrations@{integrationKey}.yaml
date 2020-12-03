@@ -1,0 +1,73 @@
+get:
+  summary: Get a list of all configured integrations of a given kind.
+  operationId: getIntegrationSubscriptions
+  parameters:
+    - $ref: ../components/parameters/IntegrationKey.yaml
+  responses:
+    '200':
+      description: Integrations response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Integration.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Integrations
+post:
+  summary: Create a new integration subscription of a given kind.
+  operationId: postIntegrationSubscription
+  parameters:
+    - $ref: ../components/parameters/IntegrationKey.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: A human-readable name for your subscription configuration.
+              example: Example Datadog Integration
+            statements:
+              type: array
+              items:
+                $ref: ../components/schemas/Statement.yaml
+            config:
+              type: object
+              description: Integration-specific configuration fields.
+              example:
+                apiKey: 582**************************116
+                hostURL: 'https://api.datadoghq.com'
+            'on':
+              type: boolean
+              example: true
+              description: Whether the integration subscription is active or not.
+            tags:
+              type: array
+              items:
+                type: string
+              example: []
+              description: Tags for the integration subscription.
+          required:
+            - name
+            - config
+    description: Create a new integration subscription.
+    required: true
+  responses:
+    '201':
+      description: Integrations response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IntegrationSubscription.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Integrations

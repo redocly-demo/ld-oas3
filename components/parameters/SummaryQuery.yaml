@@ -1,0 +1,9 @@
+name: summary
+in: query
+required: false
+description: >-
+  By default in api version >= 1, flags will _not_ include their list of
+  prerequisites, targets or rules.  Set summary=0 to include these fields for
+  each flag returned.
+schema:
+  type: boolean

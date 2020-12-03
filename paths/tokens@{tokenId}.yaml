@@ -1,0 +1,48 @@
+get:
+  summary: Get a single access token by ID.
+  operationId: getToken
+  parameters:
+    - $ref: ../components/parameters/TokenId.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Token2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Access tokens
+patch:
+  summary: Modify an access token by ID.
+  operationId: patchToken
+  parameters:
+    - $ref: ../components/parameters/TokenId.yaml
+  requestBody:
+    $ref: ../components/requestBodies/PatchOperationArray.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Token2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Access tokens
+delete:
+  summary: Delete an access token by ID.
+  operationId: deleteToken
+  parameters:
+    - $ref: ../components/parameters/TokenId.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/Standard204.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+  tags:
+    - Access tokens

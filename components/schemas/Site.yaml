@@ -1,0 +1,8 @@
+type: object
+properties:
+  href:
+    type: string
+    example: /features/sort.order
+  type:
+    type: string
+    example: text/html

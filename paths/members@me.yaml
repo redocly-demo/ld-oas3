@@ -1,0 +1,12 @@
+get:
+  summary: Get the current team member associated with the token
+  operationId: getMe
+  responses:
+    '200':
+      $ref: ../components/responses/Member2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Team members

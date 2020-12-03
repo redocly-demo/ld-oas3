@@ -1,0 +1,62 @@
+get:
+  summary: Returns a list of all projects in the account.
+  operationId: getProjects
+  responses:
+    '200':
+      description: Projects response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Projects.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Projects
+post:
+  summary: Create a new project with the given key and name.
+  operationId: postProject
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              example: New Project
+            key:
+              type: string
+              example: new-project
+            includeInSnippetByDefault:
+              type: boolean
+              example: false
+            tags:
+              type: array
+              items:
+                type: string
+              example:
+                - ops
+                - dev
+            environments:
+              type: array
+              items:
+                $ref: ../components/schemas/EnvironmentPost.yaml
+              minLength: 1
+            defaultClientSideAvailability:
+              $ref: ../components/schemas/ClientSideAvailability.yaml
+          required:
+            - name
+            - key
+    description: Project keys must be unique within an account.
+    required: true
+  responses:
+    '201':
+      $ref: ../components/responses/Project2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Projects

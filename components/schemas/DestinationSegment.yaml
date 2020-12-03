@@ -1,0 +1,5 @@
+type: object
+properties:
+  writeKey:
+    type: string
+    example: segmentWriteKey

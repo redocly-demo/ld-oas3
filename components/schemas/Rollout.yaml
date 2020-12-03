@@ -1,0 +1,8 @@
+type: object
+properties:
+  bucketBy:
+    type: string
+  variations:
+    type: array
+    items:
+      $ref: ./WeightedVariation.yaml

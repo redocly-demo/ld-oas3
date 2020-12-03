@@ -1,0 +1,7 @@
+type: object
+properties:
+  message:
+    type: string
+    example: >-
+      This is a beta API, you must pass beta in the LD-API-Version header to use
+      it.

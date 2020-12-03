@@ -1,0 +1,16 @@
+type: object
+properties:
+  _id:
+    type: string
+  variation:
+    type: integer
+  trackEvents:
+    type: boolean
+  rollout:
+    $ref: ./Rollout.yaml
+  clauses:
+    type: array
+    items:
+      $ref: ./Clause.yaml
+  description:
+    type: string

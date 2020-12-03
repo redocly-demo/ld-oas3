@@ -1,0 +1,6 @@
+name: filter
+in: query
+required: false
+description: 'A comma-separated list of filters. Each filter is of the form field:value.'
+schema:
+  type: string

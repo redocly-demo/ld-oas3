@@ -1,0 +1,15 @@
+type: object
+required:
+  - value
+properties:
+  _id:
+    type: string
+    example: 24b32dd3-0ba6-46ee-86af-230eebf3c7cb
+  name:
+    type: string
+    example: 'True'
+  description:
+    type: string
+    example: The true variation
+  value:
+    type: object

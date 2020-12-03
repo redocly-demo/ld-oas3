@@ -1,0 +1,50 @@
+type: object
+properties:
+  name:
+    type: string
+    description: The name of the new environment.
+    example: Development
+  key:
+    type: string
+    description: A project-unique key for the new environment.
+    example: dev
+  color:
+    type: string
+    description: 'A color swatch (as an RGB hex value with no leading ''#'', e.g. C8C8C8).'
+    example: '417505'
+  defaultTtl:
+    type: number
+    description: The default TTL for the new environment.
+    example: 0
+  secureMode:
+    type: boolean
+    description: Determines whether the environment is in secure mode.
+    example: false
+  defaultTrackEvents:
+    type: boolean
+    description: Set to true to send detailed event information for newly created flags.
+    example: false
+  tags:
+    type: array
+    description: An array of tags for this environment.
+    items:
+      type: string
+    example:
+      - tag1
+      - tag2
+  requireComments:
+    type: boolean
+    description: >-
+      Determines if this environment requires comments for flag and segment
+      changes.
+    example: false
+  confirmChanges:
+    type: boolean
+    description: >-
+      Determines if this environment requires confirmation for flag and segment
+      changes.
+    example: false
+required:
+  - name
+  - key
+  - color

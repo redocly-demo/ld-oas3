@@ -1,0 +1,19 @@
+# See https://redoc.ly/docs/cli/configuration/ for more information.
+apiDefinitions:
+  main: ./openapi.yaml
+lint:
+  extends:
+    - recommended
+  rules:
+    # no changes here yet
+referenceDocs:
+  generateCodeSamples:
+    languages: 
+      - lang: curl
+      - lang: Node.js
+      - lang: JavaScript
+  htmlTemplate: ./docs/index.html
+  theme:
+    colors:
+      primary:
+        main: "#0e1932"

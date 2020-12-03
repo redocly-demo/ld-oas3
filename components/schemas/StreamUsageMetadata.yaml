@@ -1,0 +1,13 @@
+type: object
+properties:
+  sdk:
+    type: string
+    description: The language of the sdk
+    example: ruby
+  version:
+    type: string
+    description: The version of the SDK
+    example: 5.4.3
+  source:
+    type: string
+    example: server

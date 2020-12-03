@@ -1,0 +1,8 @@
+type: object
+properties:
+  href:
+    type: string
+    example: /api/v2/endpoint
+  type:
+    type: string
+    example: application/json

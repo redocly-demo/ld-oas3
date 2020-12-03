@@ -1,0 +1,8 @@
+name: projectKey
+in: path
+required: true
+description: >-
+  The project key, used to tie the flags together under one project so they can
+  be managed together.
+schema:
+  type: string

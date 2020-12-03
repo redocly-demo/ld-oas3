@@ -1,0 +1,71 @@
+get:
+  summary: Fetch a list of all webhooks.
+  operationId: getWebhooks
+  responses:
+    '200':
+      description: Webhooks response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Webhooks.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Webhooks
+post:
+  summary: Create a webhook.
+  operationId: postWebhook
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            url:
+              example: 'https://example.com/example'
+              type: string
+              description: The URL of the remote webhook.
+            secret:
+              example: <password>
+              type: string
+              description: >-
+                If sign is true, and the secret attribute is omitted,
+                LaunchDarkly will automatically generate a secret for you.
+            sign:
+              type: boolean
+              description: >-
+                If sign is false, the webhook will not include a signature
+                header, and the secret can be omitted.
+            'on':
+              type: boolean
+              example: true
+              description: Whether this webhook is enabled or not.
+            name:
+              type: string
+              example: Example hook
+              description: The name of the webhook.
+            statements:
+              type: array
+              items:
+                $ref: ../components/schemas/Statement.yaml
+            tags:
+              type: array
+              items:
+                type: string
+              example: []
+              description: Tags for the webhook.
+          required:
+            - url
+            - sign
+            - 'on'
+    description: New webhook.
+    required: true
+  responses:
+    '201':
+      $ref: ../components/responses/Webhook2xx.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Webhooks

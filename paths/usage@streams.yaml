@@ -1,0 +1,14 @@
+get:
+  summary: Returns a list of all streams.
+  operationId: getStreams
+  responses:
+    '200':
+      description: Stream usage endpoints
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Streams.yaml
+    '403':
+      $ref: ../components/responses/BetaApi403.yaml
+  tags:
+    - Customer Metrics

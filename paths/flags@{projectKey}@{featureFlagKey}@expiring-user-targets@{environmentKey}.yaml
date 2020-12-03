@@ -1,0 +1,45 @@
+get:
+  summary: Get expiring user targets for feature flag
+  operationId: getExpiringUserTargets
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/FeatureFlagKey.yaml
+  responses:
+    '200':
+      description: User targets of the requested feature flag.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserTargetingExpirationForFlags.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Feature flags
+patch:
+  summary: 'Update, add, or delete expiring user targets on feature flag'
+  operationId: patchExpiringUserTargets
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+    - $ref: ../components/parameters/EnvironmentKey.yaml
+    - $ref: ../components/parameters/FeatureFlagKey.yaml
+  requestBody:
+    $ref: >-
+      ../components/requestBodies/patchExpiringUserTargetsSemanticpatchwithcomment.yaml
+  responses:
+    '200':
+      description: User targeting expirations on feature flag response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserTargetingExpirationForFlags.yaml
+    '400':
+      $ref: ../components/responses/Standard400.yaml
+    '401':
+      $ref: ../components/responses/Standard401.yaml
+    '404':
+      $ref: ../components/responses/Standard404.yaml
+    '409':
+      $ref: ../components/responses/Standard409.yaml
+  tags:
+    - Feature flags
