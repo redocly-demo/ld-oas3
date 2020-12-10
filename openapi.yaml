@@ -1,153 +1,155 @@
 openapi: 3.0.0
 info:
   title: LaunchDarkly REST API
-  description: 
+  description:
     $ref: info-description.md
-  termsOfService: 'https://launchdarkly.com/terms'
+  termsOfService: "https://launchdarkly.com/terms"
   contact:
     name: LaunchDarkly Support
-    url: 'https://support.launchdarkly.com'
+    url: "https://support.launchdarkly.com"
     email: support@launchdarkly.com
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
   version: 3.9.2
 security:
   - Token: []
 paths:
   /projects:
     $ref: paths/projects.yaml
-  '/projects/{projectKey}':
-    $ref: 'paths/projects@{projectKey}.yaml'
-  '/projects/{projectKey}/environments':
-    $ref: 'paths/projects@{projectKey}@environments.yaml'
-  '/projects/{projectKey}/environments/{environmentKey}':
-    $ref: 'paths/projects@{projectKey}@environments@{environmentKey}.yaml'
-  '/projects/{projectKey}/environments/{environmentKey}/apiKey':
-    $ref: 'paths/projects@{projectKey}@environments@{environmentKey}@apiKey.yaml'
-  '/projects/{projectKey}/environments/{environmentKey}/mobileKey':
-    $ref: 'paths/projects@{projectKey}@environments@{environmentKey}@mobileKey.yaml'
-  '/flags/{projectKey}':
-    $ref: 'paths/flags@{projectKey}.yaml'
-  '/flags/{projectKey}/{featureFlagKey}':
-    $ref: 'paths/flags@{projectKey}@{featureFlagKey}.yaml'
-  '/flags/{projectKey}/{featureFlagKey}/copy':
-    $ref: 'paths/flags@{projectKey}@{featureFlagKey}@copy.yaml'
-  '/flag-statuses/{projectKey}/{environmentKey}':
-    $ref: 'paths/flag-statuses@{projectKey}@{environmentKey}.yaml'
-  '/flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey}':
-    $ref: 'paths/flag-statuses@{projectKey}@{environmentKey}@{featureFlagKey}.yaml'
-  '/flag-status/{projectKey}/{featureFlagKey}':
-    $ref: 'paths/flag-status@{projectKey}@{featureFlagKey}.yaml'
-  '/flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey}':
+  "/projects/{projectKey}":
+    $ref: "paths/projects@{projectKey}.yaml"
+  "/projects/{projectKey}/environments":
+    $ref: "paths/projects@{projectKey}@environments.yaml"
+  "/projects/{projectKey}/environments/{environmentKey}":
+    $ref: "paths/projects@{projectKey}@environments@{environmentKey}.yaml"
+  "/projects/{projectKey}/environments/{environmentKey}/apiKey":
+    $ref: "paths/projects@{projectKey}@environments@{environmentKey}@apiKey.yaml"
+  "/projects/{projectKey}/environments/{environmentKey}/mobileKey":
+    $ref: "paths/projects@{projectKey}@environments@{environmentKey}@mobileKey.yaml"
+  "/flags/{projectKey}":
+    $ref: "paths/flags@{projectKey}.yaml"
+  "/flags/{projectKey}/{featureFlagKey}":
+    $ref: "paths/flags@{projectKey}@{featureFlagKey}.yaml"
+  "/flags/{projectKey}/{featureFlagKey}/copy":
+    $ref: "paths/flags@{projectKey}@{featureFlagKey}@copy.yaml"
+  "/flag-statuses/{projectKey}/{environmentKey}":
+    $ref: "paths/flag-statuses@{projectKey}@{environmentKey}.yaml"
+  "/flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey}":
+    $ref: "paths/flag-statuses@{projectKey}@{environmentKey}@{featureFlagKey}.yaml"
+  "/flag-status/{projectKey}/{featureFlagKey}":
+    $ref: "paths/flag-status@{projectKey}@{featureFlagKey}.yaml"
+  "/flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey}":
     $ref: >-
       paths/flags@{projectKey}@{featureFlagKey}@expiring-user-targets@{environmentKey}.yaml
-  '/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests':
-    $ref: >-
+  ? "/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests"
+  : $ref: >-
       paths/{projectKey}@flags@{featureFlagKey}@environments@{environmentKey}@approval-requests.yaml
-  '/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId}':
-    $ref: >-
+  ? "/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId}"
+  : $ref: >-
       paths/projects@{projectKey}@flags@{featureFlagKey}@environments@{environmentKey}@approval-requests@{featureFlagChangeRequestId}.yaml
-  '/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId}/apply':
-    $ref: >-
+  ? "/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId}/apply"
+  : $ref: >-
       paths/projects@{projectKey}@flags@{featureFlagKey}@environments@{environmentKey}@approval-requests@{featureFlagChangeRequestId}@apply.yaml
-  '/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId}/review':
-    $ref: >-
+  ? "/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId}/review"
+  : $ref: >-
       paths/projects@{projectKey}@flags@{featureFlagKey}@environments@{environmentKey}@approval-requests@{featureFlagChangeRequestId}@review.yaml
-  '/segments/{projectKey}/{environmentKey}':
-    $ref: 'paths/segments@{projectKey}@{environmentKey}.yaml'
-  '/segments/{projectKey}/{environmentKey}/{userSegmentKey}':
-    $ref: 'paths/segments@{projectKey}@{environmentKey}@{userSegmentKey}.yaml'
-  '/segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey}':
-    $ref: >-
+  "/segments/{projectKey}/{environmentKey}":
+    $ref: "paths/segments@{projectKey}@{environmentKey}.yaml"
+  "/segments/{projectKey}/{environmentKey}/{userSegmentKey}":
+    $ref: "paths/segments@{projectKey}@{environmentKey}@{userSegmentKey}.yaml"
+  ? "/segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey}"
+  : $ref: >-
       paths/segments@{projectKey}@{userSegmentKey}@expiring-user-targets@{environmentKey}.yaml
-  '/segments/{projectKey}/{environmentKey}/{userSegmentKey}/unbounded-users':
+  "/segments/{projectKey}/{environmentKey}/{userSegmentKey}/unbounded-users":
     $ref: >-
       paths/segments@{projectKey}@{environmentKey}@{userSegmentKey}@unbounded-users.yaml
-  '/users/{projectKey}/{environmentKey}':
-    $ref: 'paths/users@{projectKey}@{environmentKey}.yaml'
-  '/user-search/{projectKey}/{environmentKey}':
-    $ref: 'paths/user-search@{projectKey}@{environmentKey}.yaml'
-  '/users/{projectKey}/{environmentKey}/{userKey}':
-    $ref: 'paths/users@{projectKey}@{environmentKey}@{userKey}.yaml'
-  '/users/{projectKey}/{environmentKey}/{userKey}/flags':
-    $ref: 'paths/users@{projectKey}@{environmentKey}@{userKey}@flags.yaml'
-  '/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}':
+  "/users/{projectKey}/{environmentKey}":
+    $ref: "paths/users@{projectKey}@{environmentKey}.yaml"
+  "/user-search/{projectKey}/{environmentKey}":
+    $ref: "paths/user-search@{projectKey}@{environmentKey}.yaml"
+  "/users/{projectKey}/{environmentKey}/{userKey}":
+    $ref: "paths/users@{projectKey}@{environmentKey}@{userKey}.yaml"
+  "/users/{projectKey}/{environmentKey}/{userKey}/flags":
+    $ref: "paths/users@{projectKey}@{environmentKey}@{userKey}@flags.yaml"
+  "/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}":
     $ref: >-
       paths/users@{projectKey}@{environmentKey}@{userKey}@flags@{featureFlagKey}.yaml
-  '/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey}':
+  "/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey}":
     $ref: >-
       paths/users@{projectKey}@{userKey}@expiring-user-targets@{environmentKey}.yaml
   /auditlog:
     $ref: paths/auditlog.yaml
-  '/auditlog/{resourceId}':
-    $ref: 'paths/auditlog@{resourceId}.yaml'
+  "/auditlog/{resourceId}":
+    $ref: "paths/auditlog@{resourceId}.yaml"
   /webhooks:
     $ref: paths/webhooks.yaml
-  '/webhooks/{resourceId}':
-    $ref: 'paths/webhooks@{resourceId}.yaml'
+  "/webhooks/{resourceId}":
+    $ref: "paths/webhooks@{resourceId}.yaml"
   /roles:
     $ref: paths/roles.yaml
-  '/roles/{customRoleKey}':
-    $ref: 'paths/roles@{customRoleKey}.yaml'
+  "/roles/{customRoleKey}":
+    $ref: "paths/roles@{customRoleKey}.yaml"
   /members:
     $ref: paths/members.yaml
   /members/me:
     $ref: paths/members@me.yaml
-  '/members/{memberId}':
-    $ref: 'paths/members@{memberId}.yaml'
+  "/members/{memberId}":
+    $ref: "paths/members@{memberId}.yaml"
   /destinations:
     $ref: paths/destinations.yaml
-  '/destinations/{projectKey}/{environmentKey}':
-    $ref: 'paths/destinations@{projectKey}@{environmentKey}.yaml'
-  '/destinations/{projectKey}/{environmentKey}/{destinationId}':
-    $ref: 'paths/destinations@{projectKey}@{environmentKey}@{destinationId}.yaml'
+  "/destinations/{projectKey}/{environmentKey}":
+    $ref: "paths/destinations@{projectKey}@{environmentKey}.yaml"
+  "/destinations/{projectKey}/{environmentKey}/{destinationId}":
+    $ref: "paths/destinations@{projectKey}@{environmentKey}@{destinationId}.yaml"
+  /metrics:
+    $ref: "paths/metrics.yaml"
   /usage:
     $ref: paths/usage.yaml
   /usage/streams:
     $ref: paths/usage@streams.yaml
-  '/usage/streams/{source}':
-    $ref: 'paths/usage@streams@{source}.yaml'
-  '/usage/streams/{source}/bysdkversion':
-    $ref: 'paths/usage@streams@{source}@bysdkversion.yaml'
-  '/usage/streams/{source}/sdkversions':
-    $ref: 'paths/usage@streams@{source}@sdkversions.yaml'
+  "/usage/streams/{source}":
+    $ref: "paths/usage@streams@{source}.yaml"
+  "/usage/streams/{source}/bysdkversion":
+    $ref: "paths/usage@streams@{source}@bysdkversion.yaml"
+  "/usage/streams/{source}/sdkversions":
+    $ref: "paths/usage@streams@{source}@sdkversions.yaml"
   /usage/mau:
     $ref: paths/usage@mau.yaml
   /usage/mau/bycategory:
     $ref: paths/usage@mau@bycategory.yaml
   /usage/events:
     $ref: paths/usage@events.yaml
-  '/usage/events/{type}':
-    $ref: 'paths/usage@events@{type}.yaml'
-  '/usage/evaluations/{envId}/{flagKey}':
-    $ref: 'paths/usage@evaluations@{envId}@{flagKey}.yaml'
+  "/usage/events/{type}":
+    $ref: "paths/usage@events@{type}.yaml"
+  "/usage/evaluations/{envId}/{flagKey}":
+    $ref: "paths/usage@evaluations@{envId}@{flagKey}.yaml"
   /tokens:
     $ref: paths/tokens.yaml
-  '/tokens/{tokenId}':
-    $ref: 'paths/tokens@{tokenId}.yaml'
-  '/tokens/{tokenId}/reset':
-    $ref: 'paths/tokens@{tokenId}@reset.yaml'
+  "/tokens/{tokenId}":
+    $ref: "paths/tokens@{tokenId}.yaml"
+  "/tokens/{tokenId}/reset":
+    $ref: "paths/tokens@{tokenId}@reset.yaml"
   /account/relay-auto-configs:
     $ref: paths/account@relay-auto-configs.yaml
-  '/account/relay-auto-configs/{id}':
-    $ref: 'paths/account@relay-auto-configs@{id}.yaml'
-  '/account/relay-auto-configs/{id}/reset':
-    $ref: 'paths/account@relay-auto-configs@{id}@reset.yaml'
+  "/account/relay-auto-configs/{id}":
+    $ref: "paths/account@relay-auto-configs@{id}.yaml"
+  "/account/relay-auto-configs/{id}/reset":
+    $ref: "paths/account@relay-auto-configs@{id}@reset.yaml"
   /:
-    $ref: 'paths/@.yaml'
+    $ref: "paths/@.yaml"
   /integrations:
     $ref: paths/integrations.yaml
-  '/integrations/{integrationKey}':
-    $ref: 'paths/integrations@{integrationKey}.yaml'
-  '/integrations/{integrationKey}/{integrationId}':
-    $ref: 'paths/integrations@{integrationKey}@{integrationId}.yaml'
+  "/integrations/{integrationKey}":
+    $ref: "paths/integrations@{integrationKey}.yaml"
+  "/integrations/{integrationKey}/{integrationId}":
+    $ref: "paths/integrations@{integrationKey}@{integrationId}.yaml"
 servers:
-  - url: 'https://app.launchdarkly.com/api/v2'
+  - url: "https://app.launchdarkly.com/api/v2"
 components:
   securitySchemes:
     Token:
       type: apiKey
       name: Authorization
       in: header
-      description: 'https://app.launchdarkly.com/settings#/tokens'
+      description: "https://app.launchdarkly.com/settings#/tokens"
