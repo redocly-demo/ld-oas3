@@ -1,7 +1,12 @@
 openapi: 3.0.0
 info:
   title: LaunchDarkly REST API
-  description: Build custom integrations with the LaunchDarkly REST API
+  description: |
+    Build custom integrations with the LaunchDarkly REST API.
+
+    # My demo
+
+    Here is more info.
   termsOfService: 'https://launchdarkly.com/terms'
   contact:
     name: LaunchDarkly Support
