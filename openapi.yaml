@@ -78,6 +78,8 @@ paths:
   "/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey}":
     $ref: >-
       paths/users@{projectKey}@{userKey}@expiring-user-targets@{environmentKey}.yaml
+  "/metrics/{projectKey}":
+    $ref: paths/metrics@{projectKey}.yaml
   /auditlog:
     $ref: paths/auditlog.yaml
   "/auditlog/{resourceId}":
@@ -102,8 +104,6 @@ paths:
     $ref: "paths/destinations@{projectKey}@{environmentKey}.yaml"
   "/destinations/{projectKey}/{environmentKey}/{destinationId}":
     $ref: "paths/destinations@{projectKey}@{environmentKey}@{destinationId}.yaml"
-  /metrics:
-    $ref: "paths/metrics@{projectKey}.yaml"
   /usage:
     $ref: paths/usage.yaml
   /usage/streams:
