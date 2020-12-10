@@ -103,7 +103,7 @@ paths:
   "/destinations/{projectKey}/{environmentKey}/{destinationId}":
     $ref: "paths/destinations@{projectKey}@{environmentKey}@{destinationId}.yaml"
   /metrics:
-    $ref: "paths/metrics.yaml"
+    $ref: "paths/metrics@{projectKey}.yaml"
   /usage:
     $ref: paths/usage.yaml
   /usage/streams:
