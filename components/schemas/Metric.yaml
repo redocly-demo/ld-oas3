@@ -12,10 +12,9 @@ properties:
     description: Name of the metric.
     example: Test Metric
   kind:
-    type:
-      enum:
-        - click
-        - pageview
-        - custom
+    enum:
+      - click
+      - pageview
+      - custom
     description: Whether the metric is a click, pageview or custom metric.
     example: click
