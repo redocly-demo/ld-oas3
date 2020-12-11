@@ -42,11 +42,12 @@ The API always returns errors in a common format. Here's an example:
 
 JSON
 
-<pre><code>{
+```JSON{
 "code":"invalid_request",
 "message":"A feature with that key already exists",
 "id":"30ce6058-87da-11e4-b116-123b93f75cba"
-}</code></pre>
+}
+```
 
 # CORS
 
