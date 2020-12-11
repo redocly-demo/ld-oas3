@@ -1,0 +1,17 @@
+get:
+  summary: Returns a list of all metrics for a project.
+  description: Metrics track flag behavior over time when an experiment is running. The data generated from experiments gives you more insight into the impact of a particular flag. Using the Metrics API, you can create, delete, and manage metrics.
+  operationId: getMetrics
+  parameters:
+    - $ref: ../components/parameters/ProjectKey.yaml
+  responses:
+    "200":
+      description: Metrics response.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Metrics.yaml
+    "401":
+      $ref: ../components/responses/Standard401.yaml
+  tags:
+    - Metrics

@@ -1,0 +1,20 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  _id:
+    $ref: ./Id.yaml
+  key:
+    type: string
+    example: test-metric
+  name:
+    type: string
+    description: Name of the metric.
+    example: Test Metric
+  kind:
+    enum:
+      - click
+      - pageview
+      - custom
+    description: Whether the metric is a click, pageview or custom metric.
+    example: click

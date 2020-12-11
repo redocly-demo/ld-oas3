@@ -1,0 +1,8 @@
+type: object
+properties:
+  _links:
+    $ref: ./Links.yaml
+  items:
+    type: array
+    items:
+      $ref: ./Metric.yaml
