@@ -10,8 +10,10 @@ referenceDocs:
   generateCodeSamples:
     languages: 
       - lang: curl
-      - lang: Node.js
       - lang: JavaScript
+      - lang: Java
+      - lang: Node.js
+      - lang: Python
   htmlTemplate: ./docs/index.html
 
   # Layout scope paginates the API for browser performance reasons.
